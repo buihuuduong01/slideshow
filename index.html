@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> slide anh</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<dir id="show">
+		<a href="#" id="next">Next</a>
+		<a href="#" id="prev"> Prev</a>
+
+		<img src="img/1.jfif" class="show" stt="0">
+		<img src="img/2.jfif" class="show" stt="1"style="display: none;">
+		<img src="img/3.jfif" class="show" stt="2"style="display: none;">
+		<img src="img/4.jfif" class="show" stt="3"style="display: none;">
+		<img src="img/5.jfif" class="show" stt="4"style="display: none;">
+	</dir>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			var stt = 0;
+			starImg = $ ('img.show:first').attr('stt');
+			endImg = $ ('img.show:last').attr('stt');
+			$('img.show').each(function(){
+				if ($(this).is(':visible'))
+					stt = $(this).attr('stt');
+			});
+			$('#next').click(function(){
+				if(stt==endImg){
+					stt = -1;
+				}
+				next = ++stt;
+				$('img.show').hide();
+				$('img.show').eq(next).show();
+			});
+			$('#prev').click(function(){
+				if (stt==0) {
+					stt=endImg;
+					prev=stt++;
+				}
+				prev = --stt;
+				$('img.show').hide();
+				$('img.show').eq(prev).show();
+			});
+		});
+	</script>
+</body>
+</html>

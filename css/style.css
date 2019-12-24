@@ -1,0 +1,28 @@
+#show{
+	margin: 0px auto;
+	width: 450px;
+	height: 250px;
+	border: 0px solid #333;
+}
+.show{
+	width: 450px;
+	height: 250px;
+}
+#next{
+	text-transform: uppercase;
+	position: absolute;
+	top: 130px;
+	right: 443px;
+	text-decoration: none;
+	color: red;
+	font-weight: bold;
+}
+#prev{
+	text-transform: uppercase;
+	position: absolute;
+	top: 130px;
+	left: 500px;
+	text-decoration: none;
+	color: red;
+	font-weight: bold;
+}
